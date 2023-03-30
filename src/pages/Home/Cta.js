@@ -15,7 +15,7 @@ const Cta = () => {
                                             Jobs</h2>
                                         <p className="text-muted">Post a job to tell us about your project. We'll quickly match you with
                                             the right freelancers.</p>
-                                        <div className="mt-4 pt-2">
+                                          <div className="mt-4 pt-2">
                                             <Link to="#" className="btn btn-primary btn-hover">Started Now <i className="uil uil-rocket align-middle ms-1"></i></Link>
                                         </div>
                                     </div>

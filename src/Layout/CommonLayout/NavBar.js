@@ -187,6 +187,24 @@ const NavBar = (props) => {
                 </Link>
               </NavItem>
 
+              <NavItem>
+                <Link className="nav-link" to="/services">
+                  Core Service
+                </Link>
+              </NavItem>
+
+              <NavItem>
+                <Link className="nav-link" to="/aboutus">
+                  Recruitment Service
+                </Link>
+              </NavItem>
+
+              <NavItem>
+                <Link className="nav-link" to="/aboutus">
+                  Job Seeker
+                </Link>
+              </NavItem>
+
               {/* <NavItem className="dropdown dropdown-hover">
                 <NavLink
                   to="/#"
