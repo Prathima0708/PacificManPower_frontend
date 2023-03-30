@@ -403,7 +403,7 @@ const NavBar = (props) => {
           </Collapse>
 
           <ul className="header-menu list-inline d-flex align-items-center mb-0">
-            <Dropdown
+            {/* <Dropdown
               isOpen={notification}
               toggle={dropDownnotification}
               className="list-inline-item  me-4"
@@ -533,7 +533,7 @@ const NavBar = (props) => {
                   </Link>
                 </div>
               </DropdownMenu>
-            </Dropdown>
+            </Dropdown> */}
             <Dropdown
               onClick={() => setUserProfile(!userProfile)}
               isOpen={userProfile}

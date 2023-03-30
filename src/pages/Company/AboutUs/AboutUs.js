@@ -15,10 +15,10 @@ const AboutUs = () => {
       </MetaTags>
       <Section />
       <About />
-      <Counter />
+      {/* <Counter />
       <Features />
       <Cta />
-      <CompanyTestimonal />
+      <CompanyTestimonal /> */}
     </React.Fragment>
   );
 };

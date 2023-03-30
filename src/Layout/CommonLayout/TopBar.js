@@ -117,7 +117,7 @@ const TopBar = () => {
                             <h5>Sign Up</h5>
                             <p className="text-muted">
                               Sign Up and get access to all the features of
-                              Jobcy
+                              PacificManpower
                             </p>
                           </div>
                           <Form action="#" className="auth-form">
@@ -163,7 +163,7 @@ const TopBar = () => {
                                 placeholder="Password"
                               />
                             </FormGroup>
-                            <FormGroup className="mb-4">
+                            {/* <FormGroup className="mb-4">
                               <div className="form-check">
                                 <Input
                                   className="form-check-input"
@@ -183,7 +183,7 @@ const TopBar = () => {
                                   </Link>
                                 </Label>
                               </div>
-                            </FormGroup>
+                            </FormGroup> */}
                             <div className="text-center">
                               <button
                                 type="submit"
@@ -210,7 +210,7 @@ const TopBar = () => {
                     </ModalBody>
                   </Modal>
                 </li>
-                <li className="list-inline-item align-middle">
+                {/* <li className="list-inline-item align-middle">
                   <Dropdown
                     isOpen={dropdownOpen}
                     toggle={toggle}
@@ -263,7 +263,7 @@ const TopBar = () => {
                       </DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
-                </li>
+                </li> */}
               </ul>
             </Col>
           </Row>

@@ -1,57 +1,115 @@
-import React from 'react';
+import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
-
 
 //Import Images
 import AboutImage from "../../../assets/images/about/img-01.jpg";
 
-
 const About = () => {
-    return (
-        <React.Fragment>
-            <section className="section overflow-hidden">
-                <Container>
-                    <Row className="align-items-center g-0">
-                        <Col lg={6}>
-                            <div className="section-title me-lg-5">
-                                <h6 className="sub-title">About Us</h6>
-                                <h2 className="title mb-4">Why <span className="text-warning fw-bold">35,000+</span> People Trust On Jobcy?</h2>
-                                <p className="text-muted">Start working with Jobcy that can provide everything you need to generate awareness, drive traffic, connect. Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with 'real' content.</p>
+  return (
+    <React.Fragment>
+      <section className="section overflow-hidden">
+        <Container>
+          <Row className="align-items-center g-0">
+            <Col lg={6}>
+              <div className="section-title me-lg-5">
+                <p className="text-muted">
+                  Pacific Manpower was formed in 2008 out of the growth in
+                  resource projects and the economic conditions with in Papua
+                  New Guinea, wishing to build a nationwide HR company offering
+                  the best skills from PNG Nationals, Other Country Nationals
+                  (OCNs) and Expatriates. We are proud to be 100% PNG Owned.
+                </p>
+                <p className="text-muted">
+                  Our sister company, TawapKamen Investments was formed in 1989
+                  and some 22 years later continues to be a major supplier of
+                  Skills to OTML and operates a large scale Security,
+                  construction and Engineering Business at Ok Tedi and also
+                  operates TKI Manpower which is one of the largest suppliers of
+                  skilled manpower to the mine.
+                </p>
 
-                                <Row mt={4} pt={2}>
-                                    <Col md={6}>
-                                        <ul className="list-unstyled about-list text-muted mb-0 mb-md-3">
-                                            <li> Digital Marketing Solutions</li>
-                                            <li> Our Talented & Experienced Marketing Agency</li>
-                                            <li> Creative Design</li>
-                                            <li> New jobs Innovation</li>
-                                        </ul>
-                                    </Col>
-                                    <Col md={6}>
-                                        <ul className="list-unstyled about-list text-muted">
-                                            <li> Create Resume</li>
-                                            <li> 5000+ Comnpanies</li>
-                                            <li> Our Blog</li>
-                                            <li> and more...</li>
-                                        </ul>
-                                    </Col>
-                                </Row>
-                                <div className="mt-3">
-                                    <Link to="#" className="btn btn-primary btn-hover">Learn More <i className="uil uil-angle-right-b align-middle"></i></Link>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col lg={6}>
-                            <div className="about-img mt-4 mt-lg-0">
-                                <img src={AboutImage} alt="" className="img-fluid rounded" />
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
-        </React.Fragment>
-    );
+                <Row mt={4} pt={2}>
+                  <Col md={12}>
+                    <p className="title mb-4 text-decoration-underline fs-3">
+                      OUR COMPANY MISSION IS:
+                    </p>
+                    <ul className="list-unstyled about-list text-muted mb-0 mb-md-3">
+                      <li>
+                        {" "}
+                        To provide Quality and Efficient Labour Hire Services to
+                        meet the needs and demands of the Mining, the Petroleum
+                        and other industries in Papua New Guinea.
+                      </li>
+                      <li>
+                        {" "}
+                        To foster relationships with resource area landowners
+                        under formal partnership arrangements for long term
+                        harmonious business relations.
+                      </li>
+                      <li>
+                        {" "}
+                        To provide efficient recruitment, work permit, visa and
+                        immigration services to all the industries.
+                      </li>
+                      <li>
+                        {" "}
+                        We operate a state of art specialist HR database program
+                        to manage over 15000 plus applicants from our centrally
+                        located Head office in Port Moresby. We have branches in
+                        Lae, Lihir and Tabubil.
+                      </li>
+                    </ul>
+                  </Col>
+                  <Col md={12}>
+                    <ul className="list-unstyled about-list text-muted">
+                      <li>
+                        {" "}
+                        Our database includes highly skilled Tradesman,
+                        professionals and Managers from Papua New Guinea,
+                        Australia, New Zealand, Fiji, Philippines, India and
+                        other nations.
+                      </li>
+                      <li>
+                        {" "}
+                        We offer a total HR solution to our clients offering
+                        Manpower, Recruitment, Immigration and Payroll services.
+                      </li>
+                      <li>
+                        {" "}
+                        We operate successful Joint venture arrangements at
+                        various resource locations throughout PNG.
+                      </li>
+                      <li>
+                        {" "}
+                        Our Teamare client focused and we tailor our services to
+                        suit you.
+                      </li>
+                      <li>
+                        For our applicants we endeavour to act professionally in
+                        all our dealings
+                      </li>
+                    </ul>
+                  </Col>
+                </Row>
+                {/* <div className="mt-3">
+                  <Link to="#" className="btn btn-primary btn-hover">
+                    Learn More{" "}
+                    <i className="uil uil-angle-right-b align-middle"></i>
+                  </Link>
+                </div> */}
+              </div>
+            </Col>
+            <Col lg={6}>
+              <div className="about-img  mt-lg-0">
+                <img src={AboutImage} alt="" className="img-fluid rounded" />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </React.Fragment>
+  );
 };
 
 export default About;

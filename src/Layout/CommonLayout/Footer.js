@@ -6,11 +6,11 @@ const Footer = () => {
   const footer = [
     {
       id: 1,
-      title: "Company",
+      title: "Discover",
       menu: [
         {
           id: 1,
-          link: "/about",
+          link: "/aboutus",
           subTitle: "About Us",
         },
         {
@@ -42,7 +42,7 @@ const Footer = () => {
     },
     {
       id: 2,
-      title: "For Jobs",
+      title: "Useful Links",
       menu: [
         {
           id: 1,
@@ -66,48 +66,48 @@ const Footer = () => {
         },
       ],
     },
-    {
-      id: 3,
-      title: "For Candidates",
-      menu: [
-        {
-          id: 1,
-          link: "/candidatelist",
-          subTitle: "Candidate List",
-        },
-        {
-          id: 2,
-          link: "/candidategrid",
-          subTitle: "Candidate Grid",
-        },
-        {
-          id: 3,
-          link: "/candidatedetails",
-          subTitle: "Candidate Details",
-        },
-      ],
-    },
-    {
-      id: 4,
-      title: "Support",
-      menu: [
-        {
-          id: 1,
-          link: "/contact",
-          subTitle: "Help Center",
-        },
-        {
-          id: 2,
-          link: "/faqs",
-          subTitle: "FAQ'S",
-        },
-        {
-          id: 3,
-          link: "/privacyandpolicy",
-          subTitle: "Privacy Policy",
-        },
-      ],
-    },
+    // {
+    //   id: 3,
+    //   title: "For Candidates",
+    //   menu: [
+    //     {
+    //       id: 1,
+    //       link: "/candidatelist",
+    //       subTitle: "Candidate List",
+    //     },
+    //     {
+    //       id: 2,
+    //       link: "/candidategrid",
+    //       subTitle: "Candidate Grid",
+    //     },
+    //     {
+    //       id: 3,
+    //       link: "/candidatedetails",
+    //       subTitle: "Candidate Details",
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: 4,
+    //   title: "Support",
+    //   menu: [
+    //     {
+    //       id: 1,
+    //       link: "/contact",
+    //       subTitle: "Help Center",
+    //     },
+    //     {
+    //       id: 2,
+    //       link: "/faqs",
+    //       subTitle: "FAQ'S",
+    //     },
+    //     {
+    //       id: 3,
+    //       link: "/privacyandpolicy",
+    //       subTitle: "Privacy Policy",
+    //     },
+    //   ],
+    // },
   ];
   const footerIcons = [
     {
@@ -132,7 +132,7 @@ const Footer = () => {
       <section className="bg-footer">
         <Container>
           <Row>
-            <Col lg={4}>
+            {/* <Col lg={4}>
               <div className="footer-item mt-4 mt-lg-0 me-lg-5">
                 <h4 className="text-white mb-4">Pacific Manpower</h4>
                 <p className="text-white-50">
@@ -150,10 +150,49 @@ const Footer = () => {
                   ))}
                 </ul>
               </div>
+            </Col> */}
+            {/* {footer.map((footerdetails, key) => (
+              <Col lg={2} xs={6} key={key}>
+                <div className="footer-item mt-4 mt-lg-0">
+                  <p className="fs-16 text-white mb-4">{footerdetails.title}</p>
+                  {(footerdetails.menu || []).map((menuInner, key) => (
+                    <ul className="list-unstyled footer-list mb-0" key={key}>
+                      <li>
+                        <Link to={menuInner.link}>
+                          <i className="mdi mdi-chevron-right"></i>{" "}
+                          {menuInner.subTitle}
+                        </Link>
+                      </li>
+                    </ul>
+                  ))}
+                </div>
+              </Col>
+            ))} */}
+
+            <Col lg={2} xs={6}>
+              <div className="footer-item mt-4 mt-lg-0">
+                <p className="fs-16 text-white mb-4">Address</p>
+
+                <ul className="list-unstyled footer-list mb-0 text-white-50">
+                  <li>P.O. Box 876 Konedobu, NCD Papua New Guinea</li>
+                </ul>
+              </div>
+            </Col>
+            <Col lg={3} xs={6}>
+              <div className="footer-item mt-4 mt-lg-0">
+                <p className="fs-16 text-white mb-4">Contact</p>
+
+                <ul className="list-unstyled footer-list mb-0 text-white-50">
+                  <li>
+                    Tel (+675) 70311391/392/393/394 <br />
+                    Fax (+675) 3210131 contact@pacificmanpower.com.pg
+                  </li>
+                </ul>
+              </div>
             </Col>
             {footer.map((footerdetails, key) => (
               <Col lg={2} xs={6} key={key}>
-                <div className="footer-item mt-4 mt-lg-0">
+                <div className="footer-item mt-4  mt-lg-0">
                   <p className="fs-16 text-white mb-4">{footerdetails.title}</p>
                   {(footerdetails.menu || []).map((menuInner, key) => (
                     <ul className="list-unstyled footer-list mb-0" key={key}>
@@ -171,7 +210,7 @@ const Footer = () => {
           </Row>
         </Container>
       </section>
-      <div className="footer-alt">
+      {/* <div className="footer-alt">
         <Container>
           <Row>
             <Col lg={12}>
@@ -189,7 +228,7 @@ const Footer = () => {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };
