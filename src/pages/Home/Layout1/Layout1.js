@@ -2,6 +2,7 @@ import React from "react";
 import Section from "../Layout1/Section";
 import Home from "../Home";
 import MetaTags from "react-meta-tags";
+import AuthLayout from "../../../Layout/AuthLayout";
 
 const Layout1 = () => {
   return (

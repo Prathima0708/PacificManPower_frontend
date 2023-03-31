@@ -12,7 +12,7 @@ import signUpImage from "../../assets/images/auth/sign-up.png";
 import { Form } from "react-bootstrap";
 import axios from "axios";
 
-const SignUp = () => {
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -60,7 +60,7 @@ const SignUp = () => {
         } catch (error) {}
         if (res.status === 201) {
           console.log("success");
-          history.push("/home");
+          history.push("/");
 
           // do something to log the user in, e.g. redirect to a dashboard page
         } else {
@@ -238,4 +238,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Register;

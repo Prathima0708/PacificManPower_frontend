@@ -187,20 +187,65 @@ const NavBar = (props) => {
                 </Link>
               </NavItem>
 
-              <NavItem>
+              {/* <NavItem>
                 <Link className="nav-link" to="/services">
                   Core Service
                 </Link>
+              </NavItem> */}
+              <NavItem className="dropdown dropdown-hover">
+                <NavLink
+                  to="/#"
+                  id="jobsdropdown"
+                  role="button"
+                  onClick={() => setCompany(!company)}
+                >
+                  Core Service <div className="arrow-down"></div>
+                </NavLink>
+                <ul
+                  className={classname("dropdown-menu dropdown-menu-center", {
+                    show: company,
+                  })}
+                  aria-labelledby="jobsdropdown"
+                >
+                  <li>
+                    <Link className="dropdown-item" to="/manpower">
+                      Manpower
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/recruitment">
+                      Recruitment
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/passport">
+                      Passport and Work permits
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/payroll">
+                      Payroll Services
+                    </Link>
+                  </li>
+                  <Link className="dropdown-item" to="/technical">
+                    Technical Services
+                  </Link>
+                  <li>
+                    <Link className="dropdown-item" to="/ITservices">
+                      IT services
+                    </Link>
+                  </li>
+                </ul>
               </NavItem>
 
               <NavItem>
-                <Link className="nav-link" to="/aboutus">
+                <Link className="nav-link" to="/recruitmentservice">
                   Recruitment Service
                 </Link>
               </NavItem>
 
               <NavItem>
-                <Link className="nav-link" to="/aboutus">
+                <Link className="nav-link" to="/joblist">
                   Job Seeker
                 </Link>
               </NavItem>

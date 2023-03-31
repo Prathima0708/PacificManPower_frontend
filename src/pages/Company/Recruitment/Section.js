@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Nav } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Col, Container, Nav, Row } from "reactstrap";
 
 const Section = () => {
   return (
@@ -10,7 +10,7 @@ const Section = () => {
           <Row className="justify-content-center">
             <Col md={6}>
               <div className="text-center text-white">
-                <h3 className="mb-4">IT Services</h3>
+                <h3 className="mb-4">Recruitment</h3>
                 <div className="page-next">
                   <Nav
                     className="d-inline-block"
@@ -28,7 +28,7 @@ const Section = () => {
                         aria-current="page"
                       >
                         {" "}
-                        IT Services{" "}
+                        Recruitment{" "}
                       </li>
                     </ol>
                   </Nav>

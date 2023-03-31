@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Nav } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Col, Container, Row } from "reactstrap";
 
 const Section = () => {
   return (
@@ -10,9 +10,9 @@ const Section = () => {
           <Row className="justify-content-center">
             <Col md={6}>
               <div className="text-center text-white">
-                <h3 className="mb-4">IT Services</h3>
+                <h3 className="mb-4">Recruitment Service</h3>
                 <div className="page-next">
-                  <Nav
+                  <nav
                     className="d-inline-block"
                     aria-label="breadcrumb text-center"
                   >
@@ -21,17 +21,17 @@ const Section = () => {
                         <Link to="/">Home</Link>
                       </li>
                       <li className="breadcrumb-item">
-                        <Link to="#">Pages</Link>
+                        <Link to="#">Recruitment Service</Link>
                       </li>
                       <li
                         className="breadcrumb-item active"
                         aria-current="page"
                       >
                         {" "}
-                        IT Services{" "}
+                        Recruitment Service{" "}
                       </li>
                     </ol>
-                  </Nav>
+                  </nav>
                 </div>
               </div>
             </Col>
