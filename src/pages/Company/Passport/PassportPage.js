@@ -7,7 +7,7 @@ const PassportPage = () => {
       <section className="section">
         <Container>
           <Row>
-            <Col lg={8}>
+            <Col lg={8} style={{lineHeight:'2.1em'}}>
               <ul>
                 <li>
                   Use our in house team to complete and manage the lodgement of

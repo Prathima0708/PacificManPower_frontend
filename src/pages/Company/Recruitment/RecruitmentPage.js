@@ -7,7 +7,7 @@ const RecruitmentPage = () => {
       <section className="section">
         <Container>
           <Row>
-            <Col lg={8}>
+            <Col lg={8} style={{lineHeight:'2.1em'}}>
               <ul>
                 <li>
                   Our recruitment services aim to take the hassle out of finding

@@ -168,6 +168,7 @@ const PrivacyAndPolicy = React.lazy(() =>
   import("../pages/Company/PrivacyAndPolicy/PrivacyAndPolicy")
 );
 const Faqs = React.lazy(() => import("../pages/Company/Faqs/Faqs"));
+const ReadmoreNews = React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/ReadMoreNews"));
 const Manpower = React.lazy(() => import("../pages/Company/Manpower/Manpower"));
 const Passport = React.lazy(() => import("../pages/Company/Passport/Passport"));
 const Payroll = React.lazy(() => import("../pages/Company/Payroll/Payroll"));
@@ -292,7 +293,8 @@ const userRoutes = [
   { path: "/joblist", component: JobList },
 
   //Company Section
-  { path: "/faqs", component: Faqs },
+  { path: "/news", component: Faqs },
+  { path: "/readmore", component: ReadmoreNews },
   { path: "/ITservices", component: PrivacyAndPolicy },
   { path: "/pricing", component: Pricing },
   { path: "/team", component: Team },

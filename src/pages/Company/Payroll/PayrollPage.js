@@ -7,7 +7,7 @@ const PayrollPage = () => {
       <section className="section">
         <Container>
           <Row>
-            <Col lg={8}>
+            <Col lg={8} style={{lineHeight:'2.1em'}}>
               <ul>
                 <li>
                   Due to the experience we have gained in our own company

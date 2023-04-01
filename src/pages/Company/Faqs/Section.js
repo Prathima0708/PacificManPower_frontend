@@ -10,13 +10,13 @@ const Section = () => {
                             <Row className="justify-content-center">
                                 <Col md={6}>
                                     <div className="text-center text-white">
-                                        <h3 className="mb-4">FAQ'S</h3>
+                                        <h3 className="mb-4">News</h3>
                                         <div className="page-next">
                                             <Nav className="d-inline-block" aria-label="breadcrumb text-center">
                                                 <ol className="breadcrumb justify-content-center">
                                                     <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                                                    <li className="breadcrumb-item"><Link to="#">Company</Link></li>
-                                                    <li className="breadcrumb-item active" aria-current="page"> FAQ'S </li>
+                                                    <li className="breadcrumb-item"><Link to="#">Pages</Link></li>
+                                                    <li className="breadcrumb-item active" aria-current="page"> News </li>
                                                 </ol>
                                             </Nav>
                                         </div>

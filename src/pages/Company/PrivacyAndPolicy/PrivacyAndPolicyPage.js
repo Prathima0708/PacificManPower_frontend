@@ -86,7 +86,7 @@ const PrivacyAndPolicyPage = () => {
                 </ul>
               </Col>
             ))} */}
-            <Col lg={8}>
+            <Col lg={8} style={{lineHeight:'2.1em'}}>
               <p>
                 Our Expertriate IT consultant is highly qualified and has worked
                 for many major organisation. Talk to us to provide our highly

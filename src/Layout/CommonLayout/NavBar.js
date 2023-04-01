@@ -444,6 +444,12 @@ const NavBar = (props) => {
                   Contact
                 </Link>
               </NavItem>
+              
+              <NavItem>
+                <Link className="nav-link" to="/news">
+                  News
+                </Link>
+              </NavItem>
             </ul>
           </Collapse>
 

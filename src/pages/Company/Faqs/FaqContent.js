@@ -40,9 +40,9 @@ const FaqContent = () => {
                                         onClick={() => {
                                             TabChange("1");
                                         }}
-                                        type="button">General</NavLink>
+                                        type="button">Lates News</NavLink>
                                 </NavItem>
-                                <NavItem>
+                                {/* <NavItem>
                                     <NavLink to="#"
                                         className={classnames({ active: activeTab === "2" })}
                                         onClick={() => {
@@ -57,14 +57,14 @@ const FaqContent = () => {
                                             TabChange("3");
                                         }}
                                         type="button">Payment</NavLink>
-                                </NavItem>
-                                <NavItem>
+                                </NavItem> */}
+                                {/* <NavItem>
                                     <NavLink className={classnames({ active: activeTab === "4" })}
                                         onClick={() => {
                                             TabChange("4");
                                         }}
                                         type="button">Support</NavLink>
-                                </NavItem>
+                                </NavItem> */}
                             </Nav>
                         </Col>
                     </Row>
@@ -129,12 +129,12 @@ const FaqContent = () => {
                                 </TabPane>
                             </TabContent>
                         </Col>
-                        <Col lg={12}>
+                        {/* <Col lg={12}>
                             <div className="text-center mt-5">
                                 <Link to="/contact" className="btn btn-primary btn-hover mt-2"><i className="uil uil-phone"></i> Contact Us</Link>
                                 <Link to="#" className="btn btn-warning btn-hover mt-2 ms-md-2"><i className="uil uil-envelope"></i> Email Now</Link>
                             </div>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Container>
             </section>

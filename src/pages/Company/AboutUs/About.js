@@ -11,7 +11,7 @@ const About = () => {
       <section className="section overflow-hidden">
         <Container>
           <Row className="align-items-center g-0">
-            <Col lg={6}>
+            <Col lg={6} style={{lineHeight:'2em'}}>
               <div className="section-title me-lg-5">
                 <p className="text-muted">
                   Pacific Manpower was formed in 2008 out of the growth in
@@ -31,7 +31,7 @@ const About = () => {
 
                 <Row mt={4} pt={2}>
                   <Col md={12}>
-                    <p className="title mb-4 text-decoration-underline fs-3">
+                    <p className="title mb-4 text-decoration-underline " style={{fontFamily: 'Ubuntu', letterSpacing:'2px'}}>
                       OUR COMPANY MISSION IS:
                     </p>
                     <ul className="list-unstyled about-list text-muted mb-0 mb-md-3">
