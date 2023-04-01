@@ -153,6 +153,7 @@
 // export { userRoutes, authRoutes };
 
 import React from "react";
+
 /** Add Route Component */
 //Home Section
 const Layout1 = React.lazy(() => import("../pages/Home/Layout1/Layout1"));
@@ -169,6 +170,18 @@ const PrivacyAndPolicy = React.lazy(() =>
 );
 const Faqs = React.lazy(() => import("../pages/Company/Faqs/Faqs"));
 const ReadmoreNews = React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/ReadMoreNews"));
+const NullPowerPlant=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/Nullpowerplant/Nullpowerplant"));
+const HiddenValley=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/HiddenValley/HiddenValley"));
+const NewOwner=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/NewOwner/NewOwner"));
+const RecordProduction=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/RecordProduction/RecordProduction"));
+const Morobe=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/Morobe/Morobe"));
+const Newcrest=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/NewCrest/NewCrest"));
+const LihirGold=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/LihirGold/LihirGold"));
+const NewGas=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/NewGas/NewGas"));
+const LandOwners=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/LandOwners/LandOwners"));
+const Turkai=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/Turkai/Turkai"));
+
+
 const Manpower = React.lazy(() => import("../pages/Company/Manpower/Manpower"));
 const Passport = React.lazy(() => import("../pages/Company/Passport/Passport"));
 const Payroll = React.lazy(() => import("../pages/Company/Payroll/Payroll"));
@@ -295,6 +308,17 @@ const userRoutes = [
   //Company Section
   { path: "/news", component: Faqs },
   { path: "/readmore", component: ReadmoreNews },
+  { path: "/readmorenewsnullpowerplant", component: NullPowerPlant },
+  { path: "/readmorenewsNewOwner", component: NewOwner },
+  { path: "/readmorenewsHiddenValley", component: HiddenValley },
+  { path: "/readmorenewsRecordProduction", component:RecordProduction  },
+  { path: "/readmoreMorobe", component:Morobe  },
+  { path: "/readmoreNewCrest", component:Newcrest  },
+  { path: "/readmoreLihirGold", component:LihirGold  },
+  { path: "/readmoreNewGas", component:NewGas  },
+  { path: "/readmoreLandowners", component:LandOwners  },
+  { path: "/readmoreTurkai", component:Turkai  },
+
   { path: "/ITservices", component: PrivacyAndPolicy },
   { path: "/pricing", component: Pricing },
   { path: "/team", component: Team },

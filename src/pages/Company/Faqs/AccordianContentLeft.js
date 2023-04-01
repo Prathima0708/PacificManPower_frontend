@@ -59,7 +59,7 @@ const AccordianContentLeft = () => {
                 BY MATTHEW VARI<br/>
                 The NiuPower gas fired plant being built outside the PNG LNG Plant site outside of Port Moresby is 80 per cent complete and set for completion in December this year. In a site visit yesterday by Deputy Prime Minister Charles Abel 
                 <div className="learn-more">
-                    <Link to="#" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                <Link to="/readmorenewsnullpowerplant" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
                     </div>
                 </Collapse>
@@ -77,7 +77,7 @@ const AccordianContentLeft = () => {
                     One of Port Moresby's four-star hotels, the Crowne Plaza, is expected to change ownership at The hotel, with bigger shares owned by Nambawan Super Ltd, has been on the market to sell
 the end of this week.
 for a period of time. <div className="learn-more">
-                    <Link to="#" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                    <Link to="/readmorenewsNewOwner" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
                     </div>
                 </Collapse>
@@ -95,7 +95,7 @@ for a period of time. <div className="learn-more">
                     HIDDEN Valley mine in Bulolo, Morobe, has so far paid K421 million in taxes and royalties Harmony South East Asia operations chief executive Johannes van Heerden and operation executive manager Charles Devillie revealed this during a Lae Chamber of Commerce and
 while contributing K591 million into the regional economy.
                   <div className="learn-more">
-                    <Link to="#" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                    <Link to="/readmorenewsHiddenValley" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
                     </div>
                 </Collapse>
@@ -114,7 +114,7 @@ while contributing K591 million into the regional economy.
                     One of Port Moresby's four-star hotels, the Crowne Plaza, is expected to change ownership at The hotel, with bigger shares owned by Nambawan Super Ltd, has been on the market to sell
 the end of this week.
 for a period of time. <div className="learn-more">
-                    <Link to="#" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                    <Link to="/readmorenewsRecordProduction" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
                     </div>
                 </Collapse>
@@ -129,11 +129,10 @@ for a period of time. <div className="learn-more">
                 </h2>
                 <Collapse isOpen={isCollapseSixth} id="buying-three">
                     <div className="accordion-body" style={{lineHeight:'2em'}}>
-                    October 31, 2018 <br/> Source The National Business<br/>
-                    One of Port Moresby's four-star hotels, the Crowne Plaza, is expected to change ownership at The hotel, with bigger shares owned by Nambawan Super Ltd, has been on the market to sell
-the end of this week.
-for a period of time. <div className="learn-more">
-                    <Link to="#" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                    October 26, 2018 <br/> Source The National Business<br/>
+                    The recent tour of the Riverina rice-growing region of Australia has been hailed a success by the participating delegates from Papua New Guinea.
+The tour provided PNG delegates the opportunity to see how commercial rice farming was done in Australia. <div className="learn-more">
+                    <Link to="/readmoreTurkai" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
                     </div>
                 </Collapse>

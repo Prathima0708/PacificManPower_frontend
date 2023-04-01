@@ -38,7 +38,7 @@ const AccordianContentRight = () => {
 2018 Morobe Agricultural Show.
 Trukai Industries Ltd Chief Executive 
 <div className="learn-more">
-                    <Link to="/readmore" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                    <Link to="/readmoreMorobe" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
                     </div>
                 </Collapse>
@@ -57,7 +57,7 @@ October 31, 2018<br/>
 Newcrest has contributed US$377 million to its national account through acquisition of K1.18 billion of currency in the 2018 financial year.
 This makes the company one of the largest contributors of foreign exchange in the country.
 <div className="learn-more">
-                    <Link to="#" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                    <Link to="/readmoreNewCrest" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
                     </div>
                 </Collapse>
@@ -76,7 +76,7 @@ October 31, 2018<br/>
 Lihir Gold mine's contribution to government and landowners rounded off at K269 million as of the close of its 2018 financial year in June.
 Newcrest's gold mine at Lihir makes a substantial contribution to PNG government revenue through payment of taxes, royalties, and expenditure on approved infrastructure projects.
 <div className="learn-more">
-                    <Link to="#" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                    <Link to="/readmoreLihirGold" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
 
                     </div>
@@ -98,7 +98,7 @@ Newcrest's gold mine at Lihir makes a substantial contribution to PNG government
 plant site, says Oil Search managing director Peter Botten.
 Two are underwritten by Papua LNG and one by the PNG LNG and P'nyang gas fields, Botton
 <div className="learn-more">
-                    <Link to="#" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                    <Link to="/readmoreNewGas" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
 
                     </div>
@@ -120,7 +120,7 @@ OIL Search reported a strong third-quarter result, delivering the company's high
 financial position.
 Managing director Peter Botten said total oil and gas production was 7.5 million barrels of oil
 <div className="learn-more">
-                    <Link to="#" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
+                    <Link to="/readmoreLandowners" className="form-text text-primary" >Read More <i className="uil uil-angle-right-b"></i></Link>
                                         </div>
 
                     </div>
