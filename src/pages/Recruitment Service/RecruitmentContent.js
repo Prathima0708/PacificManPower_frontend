@@ -7,7 +7,7 @@ const RecruitmentContent = () => {
       <section className="section">
         <Container>
           <Row className="align-items-center mt-5">
-            <Col lg={6}>
+            <Col lg={6} style={{ lineHeight: "2em", fontStyle: "Ubuntu" }}>
               <div className="section-title mt-4 mt-lg-0">
                 <p className="text-muted">
                   If you are a Recruitment Agency or your business requires a
@@ -16,14 +16,30 @@ const RecruitmentContent = () => {
                   form. Complete the details below and we shall get back to
                   within the next working day.
                 </p>
-                <h6>Postal Address</h6>{" "}
+                <h6
+                  style={{
+                    fontFamily: "Ubuntu",
+                    letterSpacing: "2px",
+                    fontSize: "18px",
+                  }}
+                >
+                  Postal Address
+                </h6>{" "}
                 <p className="text-muted">
                   {" "}
                   PO Box 876,
                   <br /> Konedobu, NCD,
                   <br /> Papua New Guinea
                 </p>
-                <h6>Head Office</h6>{" "}
+                <h6
+                  style={{
+                    fontFamily: "Ubuntu",
+                    letterSpacing: "2px",
+                    fontSize: "18px",
+                  }}
+                >
+                  Head Office
+                </h6>{" "}
                 <p className="text-muted">
                   {" "}
                   Level 3 Burns Haus,

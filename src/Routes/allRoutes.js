@@ -169,18 +169,39 @@ const PrivacyAndPolicy = React.lazy(() =>
   import("../pages/Company/PrivacyAndPolicy/PrivacyAndPolicy")
 );
 const Faqs = React.lazy(() => import("../pages/Company/Faqs/Faqs"));
-const ReadmoreNews = React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/ReadMoreNews"));
-const NullPowerPlant=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/Nullpowerplant/Nullpowerplant"));
-const HiddenValley=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/HiddenValley/HiddenValley"));
-const NewOwner=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/NewOwner/NewOwner"));
-const RecordProduction=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/RecordProduction/RecordProduction"));
-const Morobe=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/Morobe/Morobe"));
-const Newcrest=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/NewCrest/NewCrest"));
-const LihirGold=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/LihirGold/LihirGold"));
-const NewGas=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/NewGas/NewGas"));
-const LandOwners=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/LandOwners/LandOwners"));
-const Turkai=React.lazy(() => import("../pages/Company/Faqs/ReadmoreNews/Turkai/Turkai"));
-
+const ReadmoreNews = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/ReadMoreNews")
+);
+const NullPowerPlant = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/Nullpowerplant/Nullpowerplant")
+);
+const HiddenValley = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/HiddenValley/HiddenValley")
+);
+const NewOwner = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/NewOwner/NewOwner")
+);
+const RecordProduction = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/RecordProduction/RecordProduction")
+);
+const Morobe = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/Morobe/Morobe")
+);
+const Newcrest = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/NewCrest/NewCrest")
+);
+const LihirGold = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/LihirGold/LihirGold")
+);
+const NewGas = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/NewGas/NewGas")
+);
+const LandOwners = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/LandOwners/LandOwners")
+);
+const Turkai = React.lazy(() =>
+  import("../pages/Company/Faqs/ReadmoreNews/Turkai/Turkai")
+);
 
 const Manpower = React.lazy(() => import("../pages/Company/Manpower/Manpower"));
 const Passport = React.lazy(() => import("../pages/Company/Passport/Passport"));
@@ -311,13 +332,13 @@ const userRoutes = [
   { path: "/readmorenewsnullpowerplant", component: NullPowerPlant },
   { path: "/readmorenewsNewOwner", component: NewOwner },
   { path: "/readmorenewsHiddenValley", component: HiddenValley },
-  { path: "/readmorenewsRecordProduction", component:RecordProduction  },
-  { path: "/readmoreMorobe", component:Morobe  },
-  { path: "/readmoreNewCrest", component:Newcrest  },
-  { path: "/readmoreLihirGold", component:LihirGold  },
-  { path: "/readmoreNewGas", component:NewGas  },
-  { path: "/readmoreLandowners", component:LandOwners  },
-  { path: "/readmoreTurkai", component:Turkai  },
+  { path: "/readmorenewsRecordProduction", component: RecordProduction },
+  { path: "/readmoreMorobe", component: Morobe },
+  { path: "/readmoreNewCrest", component: Newcrest },
+  { path: "/readmoreLihirGold", component: LihirGold },
+  { path: "/readmoreNewGas", component: NewGas },
+  { path: "/readmoreLandowners", component: LandOwners },
+  { path: "/readmoreTurkai", component: Turkai },
 
   { path: "/ITservices", component: PrivacyAndPolicy },
   { path: "/pricing", component: Pricing },
@@ -334,7 +355,7 @@ const userRoutes = [
   //Home Section
   { path: "/layout3", component: Layout3 },
   { path: "/layout2", component: Layout2 },
-  { path: "/", component: Layout1 },
+  { path: "/home", component: Layout1 },
 ];
 
 const authRoutes = [
@@ -342,7 +363,7 @@ const authRoutes = [
   { path: "/comingsoon", component: ComingSoon },
   { path: "/resetpassword", component: ResetPassword },
   { path: "/signout", component: SignOut },
-  { path: "/signup", component: SignUp },
+  { path: "/", component: SignUp },
   { path: "/signin", component: SignIn },
 ];
 export { userRoutes, authRoutes };

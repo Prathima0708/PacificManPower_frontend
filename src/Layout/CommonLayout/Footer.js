@@ -169,7 +169,7 @@ const Footer = () => {
               </Col>
             ))} */}
 
-            <Col lg={2} xs={6}>
+            <Col lg={2} xs={6} style={{ fontFamily: "Poppins" }}>
               <div className="footer-item mt-4 mt-lg-0">
                 <p className="fs-16 text-white mb-4">Address</p>
 
@@ -178,7 +178,7 @@ const Footer = () => {
                 </ul>
               </div>
             </Col>
-            <Col lg={3} xs={6}>
+            <Col lg={3} xs={6} style={{ fontFamily: "Poppins" }}>
               <div className="footer-item mt-4 mt-lg-0">
                 <p className="fs-16 text-white mb-4">Contact</p>
 
@@ -191,7 +191,7 @@ const Footer = () => {
               </div>
             </Col>
             {footer.map((footerdetails, key) => (
-              <Col lg={2} xs={6} key={key}>
+              <Col lg={2} xs={6} key={key} style={{ fontFamily: "Poppins" }}>
                 <div className="footer-item mt-4  mt-lg-0">
                   <p className="fs-16 text-white mb-4">{footerdetails.title}</p>
                   {(footerdetails.menu || []).map((menuInner, key) => (

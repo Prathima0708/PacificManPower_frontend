@@ -120,12 +120,17 @@ const NavBar = (props) => {
   return (
     <React.Fragment>
       <nav
+        style={{
+          fontFamily: "Poppins",
+          letterSpacing: "0.5px",
+          color: "black",
+        }}
         className={"navbar navbar-expand-lg fixed-top sticky p-0 " + navClass}
         id="navigation"
       >
         <Container fluid className="custom-container">
           <Link className="navbar-brand text-dark fw-bold me-auto" to="/">
-            <img src={darkLogo} height="42" alt="" className="logo-dark" />
+            <img src={darkLogo} height="55" alt="" className="logo-dark" />
             <img src={lightLogo} height="22" alt="" className="logo-light" />
           </Link>
           <div>
@@ -176,7 +181,7 @@ const NavBar = (props) => {
                 </ul>
               </NavItem> */}
               <NavItem>
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/home">
                   Home
                 </Link>
               </NavItem>
@@ -444,7 +449,7 @@ const NavBar = (props) => {
                   Contact
                 </Link>
               </NavItem>
-              
+
               <NavItem>
                 <Link className="nav-link" to="/news">
                   News

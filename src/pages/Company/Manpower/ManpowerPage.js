@@ -7,7 +7,7 @@ const ManpowerPage = () => {
       <section className="section">
         <Container>
           <Row>
-            <Col lg={8} style={{lineHeight:'2.1em'}}>
+            <Col lg={8} style={{ lineHeight: "2.1em" }}>
               <ul>
                 <li>
                   Manpower is the next step from the traditional "Labour Hire"

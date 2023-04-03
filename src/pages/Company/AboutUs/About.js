@@ -11,16 +11,16 @@ const About = () => {
       <section className="section overflow-hidden">
         <Container>
           <Row className="align-items-center g-0">
-            <Col lg={6} style={{lineHeight:'2em'}}>
+            <Col lg={6} style={{ lineHeight: "2em" }}>
               <div className="section-title me-lg-5">
-                <p className="text-muted">
+                <p>
                   Pacific Manpower was formed in 2008 out of the growth in
                   resource projects and the economic conditions with in Papua
                   New Guinea, wishing to build a nationwide HR company offering
                   the best skills from PNG Nationals, Other Country Nationals
                   (OCNs) and Expatriates. We are proud to be 100% PNG Owned.
                 </p>
-                <p className="text-muted">
+                <p>
                   Our sister company, TawapKamen Investments was formed in 1989
                   and some 22 years later continues to be a major supplier of
                   Skills to OTML and operates a large scale Security,
@@ -31,10 +31,22 @@ const About = () => {
 
                 <Row mt={4} pt={2}>
                   <Col md={12}>
-                    <p className="title mb-4 text-decoration-underline " style={{fontFamily: 'Ubuntu', letterSpacing:'2px'}}>
+                    <p
+                      className="title mb-4  "
+                      style={{
+                        fontFamily: "Poppins",
+                        letterSpacing: "1px",
+                        fontSize: "22px",
+                        fontWeight: "bold",
+                        backgroundColor: "#E5E7E9",
+                        padding: "1em",
+                        color: "black",
+                        borderRadius: "5px",
+                      }}
+                    >
                       OUR COMPANY MISSION IS:
                     </p>
-                    <ul className="list-unstyled about-list text-muted mb-0 mb-md-3">
+                    <ul className="  mb-0 mb-md-3">
                       <li>
                         {" "}
                         To provide Quality and Efficient Labour Hire Services to
@@ -62,7 +74,7 @@ const About = () => {
                     </ul>
                   </Col>
                   <Col md={12}>
-                    <ul className="list-unstyled about-list text-muted">
+                    <ul>
                       <li>
                         {" "}
                         Our database includes highly skilled Tradesman,

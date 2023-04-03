@@ -11,9 +11,11 @@ const ContactContent = () => {
       <section className="section">
         <Container>
           <Row className="align-items-center mt-5">
-            <Col lg={6}>
+            <Col lg={6} style={{ lineHeight: "2em" }}>
               <div className="section-title mt-4 mt-lg-0">
-                <h3 className="title">Get in touch</h3>
+                <h3 className="title" style={{ fontStyle: "Ubuntu" }}>
+                  Get in touch
+                </h3>
                 <p className="text-muted">
                   Start working with PacificManpower that can provide everything
                   you need to generate awareness, drive traffic, connect.

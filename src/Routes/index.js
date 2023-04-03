@@ -32,34 +32,34 @@ const Index = () => {
     <React.Fragment>
       <Router>
         <Suspense fallback={Loader()}>
-          <Switch>
-            {/* <Route path="/" component={SignUp} /> */}
-            <Route path={availableAuthRoutesPath}>
-              <AuthLayout>
-                {authRoutes.map((route, idx) => (
-                  <Route
-                    path={route.path}
-                    component={route.component}
-                    key={idx}
-                    exact={true}
-                  />
-                ))}
-              </AuthLayout>
-            </Route>
+          {/* <Switch> */}
+          {/* <Route path="/" component={SignUp} /> */}
+          <Route path={availableAuthRoutesPath}>
+            <AuthLayout>
+              {authRoutes.map((route, idx) => (
+                <Route
+                  path={route.path}
+                  component={route.component}
+                  key={idx}
+                  exact={true}
+                />
+              ))}
+            </AuthLayout>
+          </Route>
 
-            <Route path={availablePublicRoutesPaths}>
-              <CommonLayout>
-                {userRoutes.map((route, idx) => (
-                  <Route
-                    path={route.path}
-                    component={route.component}
-                    key={idx}
-                    exact={true}
-                  />
-                ))}
-              </CommonLayout>
-            </Route>
-          </Switch>
+          <Route path={availablePublicRoutesPaths}>
+            <CommonLayout>
+              {userRoutes.map((route, idx) => (
+                <Route
+                  path={route.path}
+                  component={route.component}
+                  key={idx}
+                  exact={true}
+                />
+              ))}
+            </CommonLayout>
+          </Route>
+          {/* </Switch> */}
         </Suspense>
       </Router>
     </React.Fragment>

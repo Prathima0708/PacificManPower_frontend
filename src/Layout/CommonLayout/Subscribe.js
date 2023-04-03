@@ -7,7 +7,11 @@ import subscribeImg from "../../assets/images/subscribe.png";
 const Subscribe = () => {
   return (
     <React.Fragment>
-      <section className="bg-subscribe" id="subscribe">
+      <section
+        className="bg-subscribe"
+        id="subscribe"
+        style={{ fontFamily: "Poppins" }}
+      >
         <Container>
           <Row className="justify-content-between align-items-center">
             <Col lg={6}>

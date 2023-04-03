@@ -13,9 +13,17 @@ const section = () => {
         <Container>
           <Row className="justify-content-center">
             <Col lg={8}>
-              <div className="text-center text-white mb-5">
-                <h1 className="display-5 fw-semibold mb-3">
-                  Search Between More Then{" "}
+              <div
+                className="text-center text-white mb-5"
+                style={{ fontFamily: "Poppins" }}
+              >
+                <h1
+                  className="display-5 mb-3"
+                  style={{
+                    fontWeight: "bold",
+                  }}
+                >
+                  Search Between More Than{" "}
                   <span className="text-warning fw-bold">10,000+ </span>
                   Open Jobs.
                 </h1>

@@ -29,18 +29,14 @@ const JobList = () => {
       <div className="section bg-light">
         <Container>
           <Row className="justify-content-center">
-            <Col lg={6}>
+            <Col lg={6} style={{ fontFamily: "Poppins" }}>
               <div className="section-title text-center mb-4 pb-2">
-                <h4 className="title">New & Random Jobs</h4>
-                <p className="text-muted mb-1">
-                  Post a job to tell us about your project. We'll quickly match
-                  you with the right freelancers.
-                </p>
+                <h4 className="title text-black">Latest Job Listings</h4>
               </div>
             </Col>
           </Row>
           <Row className="justify-content-center">
-            <Col lg={8}>
+            <Col lg={8} style={{ fontFamily: "Poppins" }}>
               <Nav
                 tabs
                 className="job-list-menu  nav-pills nav-justified flex-column flex-sm-row mb-4"

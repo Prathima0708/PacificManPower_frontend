@@ -4,6 +4,7 @@ import { Container, Card, Col, Input, Row, CardBody } from "reactstrap";
 import MetaTags from "react-meta-tags";
 import bcrypt from "bcryptjs";
 import { useHistory } from "react-router-dom";
+import moment from "moment";
 
 import lightLogo from "../../assets/images/logo-light.png";
 import darkLogo from "../../assets/images/logo-dark.png";
@@ -15,7 +16,11 @@ import axios from "axios";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [enteredDOB, setEnteredDOB] = useState(null);
+  const [enteredPhone, setEnteredPhone] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
   const history = useHistory();
 
   function handleEmailChange(event) {
@@ -26,9 +31,21 @@ const SignUp = () => {
     setPassword(event.target.value);
   }
 
-  function handleNameChange(event) {
-    setName(event.target.value);
+  function firstNameChangeHandler(event) {
+    setFirstName(event.target.value);
   }
+  function lastNameChangeHandler(event) {
+    setLastName(event.target.value);
+  }
+  const handleDOBChange = (event) => {
+    setEnteredDOB(event.target.value);
+  };
+  function handlePhonenoChange(event) {
+    setEnteredPhone(event.target.value);
+  }
+  const handleGenderChange = (event) => {
+    setSelectedGender(event.target.value);
+  };
   async function handleSubmit(event) {
     event.preventDefault();
     const saltRounds = 10;
@@ -37,34 +54,43 @@ const SignUp = () => {
 
     // handle signup form submit
     console.log("Signing up...");
+
     async function storeData() {
       const formData = {
-        user_name: name,
+        user_type_id: 2,
         email: email,
-        active: false,
         password: hashedPassword,
+        first_name: firstName,
+        last_name: lastName,
+        date_of_birth: enteredDOB,
+        gender: selectedGender,
+        isactive: true,
+        contact_number: enteredPhone,
+        email_notification_active: false,
+        user_image: null,
       };
+      console.log(formData);
       try {
         let headers = {
           "Content-Type": "application/json; charset=utf-8",
         };
         const res = await axios.post(
-          "http://127.0.0.1:8000/spacificmanpower/userreg/",
+          "http://127.0.0.1:8000/spacificmanpower/user_save_account/",
           formData,
           { headers: headers }
         );
         console.log(res.data);
 
-        try {
-          await localStorage.setItem("username", res.data.user_name);
-        } catch (error) {}
+        // try {
+        //   await localStorage.setItem("username", res.data.user_name);
+        // } catch (error) {}
         if (res.status === 201) {
           console.log("success");
-          history.push("/home");
+          history.push("/signin");
 
           // do something to log the user in, e.g. redirect to a dashboard page
         } else {
-          console.log("User authenticated");
+          console.log("error");
         }
       } catch (e) {
         console.log(e);
@@ -73,9 +99,11 @@ const SignUp = () => {
 
     storeData();
 
-    setName("");
+    setFirstName("");
+    setLastName("");
     setEmail("");
     setPassword("");
+    setEnteredDOB("");
     //setPhone("");
   }
   return (
@@ -130,77 +158,189 @@ const SignUp = () => {
                                 className="auth-form"
                                 onSubmit={handleSubmit}
                               >
-                                <div className="mb-3">
+                                {/* <div className="mb-3">
                                   <label
                                     htmlFor="usernameInput"
                                     className="form-label"
                                   >
-                                    Username
+                                    First Name
                                   </label>
                                   <Input
                                     type="text"
                                     className="form-control"
                                     required
                                     id="usernameInput"
-                                    placeholder="Enter your username"
-                                    value={name}
-                                    onChange={handleNameChange}
+                                    placeholder="Enter your firstname"
+                                    value={firstName}
+                                    onChange={firstNameChangeHandler}
                                   />
                                 </div>
                                 <div className="mb-3">
                                   <label
-                                    htmlFor="passwordInput"
+                                    htmlFor="usernameInput"
                                     className="form-label"
                                   >
-                                    Email
+                                    Last Name
                                   </label>
                                   <Input
-                                    type="email"
+                                    type="text"
                                     className="form-control"
                                     required
-                                    id="emailInput"
-                                    placeholder="Enter your email"
-                                    value={email}
-                                    onChange={handleEmailChange}
+                                    id="usernameInput"
+                                    placeholder="Enter your lastname"
+                                    value={lastName}
+                                    onChange={lastNameChangeHandler}
                                   />
+                                </div> */}
+                                <div className="d-flex">
+                                  <div className="mb-3 me-3">
+                                    <label
+                                      htmlFor="firstNameInput"
+                                      className="form-label"
+                                    >
+                                      First Name
+                                    </label>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      required
+                                      id="firstNameInput"
+                                      placeholder="Enter your first name"
+                                      value={firstName}
+                                      onChange={firstNameChangeHandler}
+                                    />
+                                  </div>
+
+                                  <div className="mb-3">
+                                    <label
+                                      htmlFor="lastNameInput"
+                                      className="form-label"
+                                    >
+                                      Last Name
+                                    </label>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      required
+                                      id="lastNameInput"
+                                      placeholder="Enter your last name"
+                                      value={lastName}
+                                      onChange={lastNameChangeHandler}
+                                    />
+                                  </div>
                                 </div>
+
+                                <div className="d-flex">
+                                  <div className="mb-3 me-3">
+                                    <label
+                                      htmlFor="passwordInput"
+                                      className="form-label"
+                                    >
+                                      Email
+                                    </label>
+                                    <Input
+                                      type="email"
+                                      className="form-control"
+                                      required
+                                      id="emailInput"
+                                      placeholder="Enter your email"
+                                      value={email}
+                                      onChange={handleEmailChange}
+                                    />
+                                  </div>
+
+                                  <div className="mb-3">
+                                    <label
+                                      htmlFor="emailInput"
+                                      className="form-label"
+                                    >
+                                      Password
+                                    </label>
+                                    <Input
+                                      type="password"
+                                      className="form-control"
+                                      id="passwordInput"
+                                      placeholder="Enter your password"
+                                      value={password}
+                                      onChange={handlePasswordChange}
+                                    />
+                                  </div>
+                                </div>
+
                                 <div className="mb-3">
                                   <label
                                     htmlFor="emailInput"
                                     className="form-label"
                                   >
-                                    Password
+                                    Date of Birth
                                   </label>
                                   <Input
-                                    type="password"
+                                    type="date"
                                     className="form-control"
-                                    id="passwordInput"
-                                    placeholder="Enter your password"
-                                    value={password}
-                                    onChange={handlePasswordChange}
+                                    id="DOB"
+                                    placeholder="Enter your DOB"
+                                    value={enteredDOB}
+                                    onChange={handleDOBChange}
                                   />
                                 </div>
-                                {/* <div className="mb-4">
-                                  <div className="form-check">
-                                    <Input
-                                      className="form-check-input"
-                                      type="checkbox"
-                                      id="flexCheckDefault"
-                                    />
+
+                                <div className="mb-3">
+                                  <label
+                                    htmlFor="emailInput"
+                                    className="form-label"
+                                  >
+                                    Contact Number
+                                  </label>
+                                  <Input
+                                    type="phone"
+                                    className="form-control"
+                                    id="phone"
+                                    placeholder="Enter your phone no"
+                                    value={enteredPhone}
+                                    onChange={handlePhonenoChange}
+                                  />
+                                </div>
+
+                                <div className="mb-3">
+                                  <label
+                                    htmlFor="genderInput"
+                                    className="form-label"
+                                  >
+                                    Gender
+                                  </label>
+                                  <div className="d-flex align-items-center">
                                     <label
-                                      className="form-check-label"
-                                      htmlFor="flexCheckDefault"
+                                      htmlFor="maleInput"
+                                      className="form-check-label me-3"
                                     >
-                                      I agree to the{" "}
-                                      <Link
-                                        to="#"
-                                        className="text-white text-decoration-underline"
-                                      >
-                                        Terms and conditions
-                                      </Link>
+                                      <input
+                                        type="radio"
+                                        id="maleInput"
+                                        value="male"
+                                        checked={selectedGender === "male"}
+                                        onChange={handleGenderChange}
+                                        className="form-check-input me-1"
+                                      />
+                                      Male
+                                    </label>
+
+                                    <label
+                                      htmlFor="femaleInput"
+                                      className="form-check-label"
+                                    >
+                                      <input
+                                        type="radio"
+                                        id="femaleInput"
+                                        value="female"
+                                        checked={selectedGender === "female"}
+                                        onChange={handleGenderChange}
+                                        className="form-check-input me-1"
+                                      />
+                                      Female
                                     </label>
                                   </div>
-                                </div> */}
+                                </div>
+
                                 <div className="text-center">
                                   <button
                                     type="submit"
