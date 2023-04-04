@@ -34,49 +34,43 @@ const SignIn = () => {
     // handle signup form submit
     console.log("Signing up...");
 
-    async function storeData() {
-      const formData = {
-        user_type_id: 2,
-        email: "abc@gmail.com",
-        password: hashedPassword,
-        first_name: firstName,
-        last_name: "jjj",
-        date_of_birth: "2023-06-23",
-        gender: "female",
-        isactive: true,
-        contact_number: "12344",
-        email_notification_active: false,
-        user_image: null,
-      };
-      console.log(formData);
-      try {
-        let headers = {
-          "Content-Type": "application/json; charset=utf-8",
+    if (firstName === "admin@gmail.com" && password === "admin") {
+      history.push("/admin");
+    } else {
+      async function storeData() {
+        const formData = {
+          email: firstName,
+          password: password,
         };
-        const res = await axios.post(
-          "http://127.0.0.1:8000/spacificmanpower/user_login/",
-          formData,
-          { headers: headers }
-        );
-        console.log(res.data);
+        console.log(formData);
+        try {
+          let headers = {
+            "Content-Type": "application/json; charset=utf-8",
+          };
+          const res = await axios.post(
+            "http://127.0.0.1:8000/spacificmanpower/user_login/",
+            formData,
+            { headers: headers }
+          );
+          console.log(res.data);
 
-        // try {
-        //   await localStorage.setItem("username", res.data.user_name);
-        // } catch (error) {}
-        if (res.status === 201) {
-          console.log("success");
-          history.push("/home");
-
-          // do something to log the user in, e.g. redirect to a dashboard page
-        } else {
-          console.log("error");
+          if (res.status === 200) {
+            console.log("success");
+            history.push("/home");
+          } else if (res.status === 404) {
+            console.log("user does not exist");
+          } else if (res.status === 401) {
+            console.log("invalid");
+          } else {
+            console.log("error");
+          }
+        } catch (e) {
+          console.log(e);
         }
-      } catch (e) {
-        console.log(e);
       }
+      storeData();
+      //history.push("/home");
     }
-
-    storeData();
 
     setFirstName("");
 
@@ -139,10 +133,10 @@ const SignIn = () => {
                                     htmlFor="usernameInput"
                                     className="form-label"
                                   >
-                                    Username
+                                    Email
                                   </label>
                                   <Input
-                                    type="text"
+                                    type="email"
                                     className="form-control"
                                     id="usernameInput"
                                     placeholder="Enter your username"
@@ -202,7 +196,7 @@ const SignIn = () => {
                                 <p className="mb-0">
                                   Don't have an account ?{" "}
                                   <Link
-                                    to="/"
+                                    to="/signup"
                                     className="fw-medium text-white text-decoration-underline"
                                   >
                                     {" "}

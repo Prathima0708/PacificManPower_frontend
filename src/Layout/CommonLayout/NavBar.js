@@ -29,6 +29,7 @@ const NavBar = (props) => {
 
   const [home, setHome] = useState(false);
   const [company, setCompany] = useState(false);
+  const [aboutUs, setAboutUs] = useState(false);
   const [pages, setPages] = useState(false);
   const [blog, setBlog] = useState(false);
 
@@ -186,10 +187,51 @@ const NavBar = (props) => {
                 </Link>
               </NavItem>
 
-              <NavItem>
+              {/* <NavItem>
                 <Link className="nav-link" to="/aboutus">
                   About Us
                 </Link>
+              </NavItem> */}
+
+              <NavItem className="dropdown dropdown-hover">
+                <NavLink
+                  to="/#"
+                  id="aboutusdropdown"
+                  role="button"
+                  onClick={() => setAboutUs(!aboutUs)}
+                >
+                  About Us <div className="arrow-down"></div>
+                </NavLink>
+                <ul
+                  className={classname("dropdown-menu dropdown-menu-center", {
+                    show: aboutUs,
+                  })}
+                  aria-labelledby="aboutusdropdown"
+                >
+                  <li>
+                    <Link className="dropdown-item" to="/aboutus">
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/landowner">
+                      Landowner Joint Ventures
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/winima">
+                      Winima Pacific Manpower
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/tkihistory">
+                      TKI History
+                    </Link>
+                  </li>
+                  <Link className="dropdown-item" to="/tkimanpower">
+                    TKI Manpower
+                  </Link>
+                </ul>
               </NavItem>
 
               {/* <NavItem>

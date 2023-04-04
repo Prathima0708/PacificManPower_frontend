@@ -354,7 +354,7 @@ const SignUp = () => {
                                 <p className="mb-0">
                                   Already a member ?{" "}
                                   <Link
-                                    to="/signin"
+                                    to="/"
                                     className="fw-medium text-white text-decoration-underline"
                                   >
                                     {" "}

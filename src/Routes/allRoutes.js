@@ -158,7 +158,9 @@ import React from "react";
 //Home Section
 const Layout1 = React.lazy(() => import("../pages/Home/Layout1/Layout1"));
 const Layout2 = React.lazy(() => import("../pages/Home/Layout2/Layout2"));
-const Layout3 = React.lazy(() => import("../pages/Home/Layout3/Layout3"));
+const Layout3 = React.lazy(() =>
+  import("../adminPanel/adminPages/Home/Layout3/Layout3")
+);
 
 //Company Section
 const AboutUs = React.lazy(() => import("../pages/Company/AboutUs/AboutUs"));
@@ -204,6 +206,19 @@ const Turkai = React.lazy(() =>
 );
 
 const Manpower = React.lazy(() => import("../pages/Company/Manpower/Manpower"));
+const LandOwner = React.lazy(() =>
+  import("../pages/Company/AboutUs/LandOwner/LandOwner")
+);
+const Winima = React.lazy(() =>
+  import("../pages/Company/AboutUs/Winima/Winima")
+);
+const TKIHistory = React.lazy(() =>
+  import("../pages/Company/AboutUs/TKIHistory/TKIHistory")
+);
+const TKIManpower = React.lazy(() =>
+  import("../pages/Company/AboutUs/TKIManpower/TKIManpower")
+);
+
 const Passport = React.lazy(() => import("../pages/Company/Passport/Passport"));
 const Payroll = React.lazy(() => import("../pages/Company/Payroll/Payroll"));
 const Recruitment = React.lazy(() =>
@@ -228,9 +243,9 @@ const JobsCategories = React.lazy(() =>
 );
 
 //Candidate and Company Section
-const CandidateList = React.lazy(() =>
-  import("../pages/CandidateAndCompany/CandidateList/CandidateList")
-);
+// const CandidateList = React.lazy(() =>
+//   import("../pages/CandidateAndCompany/CandidateList/CandidateList")
+// );
 const CandidateGrid = React.lazy(() =>
   import("../pages/CandidateAndCompany/CandidateGrid/CandidateGrid")
 );
@@ -277,12 +292,12 @@ const Components = React.lazy(() =>
 );
 
 //profile section(User Profile)
-const BookMarkJobPost = React.lazy(() =>
-  import("../pages/Profile/BookMarkJobPost/BookMarkJobPost")
-);
-const ManageJobs = React.lazy(() =>
-  import("../pages/Profile/ManageJobs/ManageJobs")
-);
+// const BookMarkJobPost = React.lazy(() =>
+//   import("../pages/Profile/BookMarkJobPost/BookMarkJobPost")
+// );
+// const ManageJobs = React.lazy(() =>
+//   import("../pages/Profile/ManageJobs/ManageJobs")
+// );
 const BookMarkJobs = React.lazy(() =>
   import("../pages/Profile/BookMarkJobs/BookMarkJobs")
 );
@@ -290,12 +305,27 @@ const MyProfile = React.lazy(() =>
   import("../pages/Profile/MyProfile/MyProfile")
 );
 
+//Admin Section
+const ManageJobs = React.lazy(() =>
+  import("../adminPanel/AdminProfile/ManageJobs/ManageJobs")
+);
+const BookMarkJobPost = React.lazy(() =>
+  import("../adminPanel/AdminProfile/BookMarkJobPost/BookMarkJobPost")
+);
+const News = React.lazy(() => import("../adminPanel/News/News"));
+const CandidateList = React.lazy(() =>
+  import("../adminPanel/CandidateAndCompany/CandidateList/CandidateList")
+);
+const NewsList = React.lazy(() =>
+  import("../adminPanel/News/NewsList/NewsList")
+);
+
 const userRoutes = [
   //profile Section(User Profile)
-  { path: "/bookmarkjobpost", component: BookMarkJobPost },
+  // { path: "/bookmarkjobpost", component: BookMarkJobPost },
   { path: "/myprofile", component: MyProfile },
   { path: "/bookmarkjobs", component: BookMarkJobs },
-  { path: "/managejobs", component: ManageJobs },
+  // { path: "/managejobs", component: ManageJobs },
 
   //Components Section(Extra Pages)
   { path: "/components", component: Components },
@@ -316,7 +346,7 @@ const userRoutes = [
   { path: "/companylist", component: CompanyList },
   { path: "/candidatedetails", component: CandidateDetails },
   { path: "/candidategrid", component: CandidateGrid },
-  { path: "/candidatelist", component: CandidateList },
+  // { path: "/candidatelist", component: CandidateList },
 
   //Jobs Section
   { path: "/jobscategories", component: JobsCategories },
@@ -345,6 +375,11 @@ const userRoutes = [
   { path: "/team", component: Team },
   { path: "/services", component: Services },
   { path: "/aboutus", component: AboutUs },
+  { path: "/landowner", component: LandOwner },
+  { path: "/winima", component: Winima },
+  { path: "/tkihistory", component: TKIHistory },
+  { path: "/tkimanpower", component: TKIManpower },
+
   { path: "/manpower", component: Manpower },
   { path: "/passport", component: Passport },
   { path: "/payroll", component: Payroll },
@@ -353,7 +388,7 @@ const userRoutes = [
   { path: "/recruitmentservice", component: RecruitmentService },
 
   //Home Section
-  { path: "/layout3", component: Layout3 },
+  // { path: "/admin", component: Layout3 },
   { path: "/layout2", component: Layout2 },
   { path: "/home", component: Layout1 },
 ];
@@ -363,7 +398,15 @@ const authRoutes = [
   { path: "/comingsoon", component: ComingSoon },
   { path: "/resetpassword", component: ResetPassword },
   { path: "/signout", component: SignOut },
-  { path: "/", component: SignUp },
-  { path: "/signin", component: SignIn },
+  { path: "/signup", component: SignUp },
+  { path: "/", component: SignIn },
 ];
-export { userRoutes, authRoutes };
+const adminRoutes = [
+  { path: "/admin", component: Layout3 },
+  { path: "/myjobs", component: ManageJobs },
+  { path: "/postjob", component: BookMarkJobPost },
+  { path: "/addnews", component: News },
+  { path: "/candidatelist", component: CandidateList },
+  { path: "/mynews", component: NewsList },
+];
+export { userRoutes, authRoutes, adminRoutes };

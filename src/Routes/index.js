@@ -1,15 +1,22 @@
 import React, { Suspense } from "react";
-import { userRoutes, authRoutes, initialRoutes } from "./allRoutes";
+import {
+  userRoutes,
+  authRoutes,
+  initialRoutes,
+  adminRoutes,
+} from "./allRoutes";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 /* Layout */
 import CommonLayout from "../Layout/CommonLayout/index";
 import AuthLayout from "../Layout/AuthLayout";
-import SignUp from "../pages/ExtraPages/SignUp";
+
+import AdminAuthLayout from "../adminPanel/Layout/AdminAuthLayout";
 
 const Index = () => {
   const availableAuthRoutesPath = authRoutes.map((r) => r["path"]);
   const availablePublicRoutesPaths = userRoutes.map((r) => r["path"]);
+  const availableAdminRoutesPaths = adminRoutes.map((r) => r["path"]);
 
   const Loader = () => {
     return (
@@ -45,6 +52,19 @@ const Index = () => {
                 />
               ))}
             </AuthLayout>
+          </Route>
+
+          <Route path={availableAdminRoutesPaths}>
+            <AdminAuthLayout>
+              {adminRoutes.map((route, idx) => (
+                <Route
+                  path={route.path}
+                  component={route.component}
+                  key={idx}
+                  exact={true}
+                />
+              ))}
+            </AdminAuthLayout>
           </Route>
 
           <Route path={availablePublicRoutesPaths}>
