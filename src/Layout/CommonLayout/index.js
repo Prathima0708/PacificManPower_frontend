@@ -10,23 +10,23 @@ import StyleSwitcher from "../CommonLayout/StyleSwitcher";
 import ScrolltoTop from "../../components/ScrolltoTop";
 
 const Layout = (props) => {
-    return (
-        <React.Fragment>
-            <Suspense>
-                <div>
-                    <TopBar />
-                    <NavBar />
-                    <div className="main-content">
-                        <div className="page-content">{props.children}</div>
-                    </div>
-                    <Subscribe />
-                    <ScrolltoTop />
-                    <Footer />
-                    <StyleSwitcher />
-                </div>
-            </Suspense>
-        </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <Suspense>
+        <div>
+          <TopBar />
+          <NavBar />
+          <div className="main-content">
+            <div className="page-content">{props.children}</div>
+          </div>
+          <Subscribe />
+          <ScrolltoTop />
+          <Footer />
+          <StyleSwitcher />
+        </div>
+      </Suspense>
+    </React.Fragment>
+  );
 };
 
 export default Layout;

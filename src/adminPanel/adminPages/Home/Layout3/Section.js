@@ -9,12 +9,13 @@ import homeImage4 from "../../../../assets/images/home/img-04.png";
 import JobSearch from "../SubSection/JobSearch";
 import CountryOptions from "../SubSection/CountryOptions";
 import NavBar from "../../../Layout/CommonLayout/NavBar";
-import Footer from "../../../Layout/CommonLayout/Footer";
+import TopBar from "../../../Layout/CommonLayout/TopBar";
 
 const Section = () => {
   SwiperCore.use([Autoplay]);
   return (
     <>
+      <TopBar />
       <NavBar />
       <section className="bg-home3" id="home">
         <Container>

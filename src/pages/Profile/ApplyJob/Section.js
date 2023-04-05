@@ -1,20 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Nav, Row } from "reactstrap";
-import NavBar from "../../Layout/CommonLayout/NavBar";
-import TopBar from "../../Layout/CommonLayout/TopBar";
 
 const Section = () => {
   return (
     <React.Fragment>
-      <TopBar />
-      <NavBar />
       <section className="page-title-box">
         <Container>
           <Row className="justify-content-center">
             <Col md={6}>
               <div className="text-center text-white">
-                <h3 className="mb-4">Manage Job Post</h3>
+                <h3 className="mb-4">Manage Job</h3>
                 <div className="page-next">
                   <Nav
                     className="d-inline-block"
@@ -22,7 +18,7 @@ const Section = () => {
                   >
                     <ol className="breadcrumb justify-content-center">
                       <li className="breadcrumb-item">
-                        <Link to="/admin">Home</Link>
+                        <Link to="/home">Home</Link>
                       </li>
 
                       <li
@@ -30,7 +26,7 @@ const Section = () => {
                         aria-current="page"
                       >
                         {" "}
-                        Add Job Post{" "}
+                        Apply for a Job{" "}
                       </li>
                     </ol>
                   </Nav>

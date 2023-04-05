@@ -301,6 +301,7 @@ const Components = React.lazy(() =>
 const BookMarkJobs = React.lazy(() =>
   import("../pages/Profile/BookMarkJobs/BookMarkJobs")
 );
+const ApplyJob = React.lazy(() => import("../pages/Profile/ApplyJob/ApplyJob"));
 const MyProfile = React.lazy(() =>
   import("../pages/Profile/MyProfile/MyProfile")
 );
@@ -318,6 +319,9 @@ const CandidateList = React.lazy(() =>
 );
 const NewsList = React.lazy(() =>
   import("../adminPanel/News/NewsList/NewsList")
+);
+const AddCompany = React.lazy(() =>
+  import("../adminPanel/AddCompany/AddCompany")
 );
 
 const userRoutes = [
@@ -355,6 +359,7 @@ const userRoutes = [
   { path: "/jobgrid", component: JobGrid },
   { path: "/joblist2", component: JobList2 },
   { path: "/joblist", component: JobList },
+  { path: "/applyforjob", component: ApplyJob },
 
   //Company Section
   { path: "/news", component: Faqs },
@@ -408,5 +413,6 @@ const adminRoutes = [
   { path: "/addnews", component: News },
   { path: "/candidatelist", component: CandidateList },
   { path: "/mynews", component: NewsList },
+  { path: "/addcompany", component: AddCompany },
 ];
 export { userRoutes, authRoutes, adminRoutes };

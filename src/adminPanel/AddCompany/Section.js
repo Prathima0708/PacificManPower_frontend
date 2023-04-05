@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import NavBar from "../Layout/CommonLayout/NavBar";
 import { Col, Container, Nav, Row } from "reactstrap";
-import NavBar from "../../Layout/CommonLayout/NavBar";
-import TopBar from "../../Layout/CommonLayout/TopBar";
+import { Link } from "react-router-dom";
+import TopBar from "../Layout/CommonLayout/TopBar";
 
 const Section = () => {
   return (
@@ -14,7 +14,7 @@ const Section = () => {
           <Row className="justify-content-center">
             <Col md={6}>
               <div className="text-center text-white">
-                <h3 className="mb-4">Manage Job Post</h3>
+                <h3 className="mb-4">Manage Company</h3>
                 <div className="page-next">
                   <Nav
                     className="d-inline-block"
@@ -30,7 +30,7 @@ const Section = () => {
                         aria-current="page"
                       >
                         {" "}
-                        Add Job Post{" "}
+                        Add Company Details{" "}
                       </li>
                     </ol>
                   </Nav>

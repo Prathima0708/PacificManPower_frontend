@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import NavBar from "../../Layout/CommonLayout/NavBar";
+import TopBar from "../../Layout/CommonLayout/TopBar";
 
 const Section = () => {
   return (
     <React.Fragment>
+      <TopBar />
       <NavBar />
       <section className="page-title-box">
         <Container className="container">

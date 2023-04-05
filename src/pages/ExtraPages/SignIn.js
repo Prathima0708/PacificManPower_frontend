@@ -32,7 +32,6 @@ const SignIn = () => {
     event.preventDefault();
 
     // handle signup form submit
-    console.log("Signing up...");
 
     if (firstName === "admin@gmail.com" && password === "admin") {
       history.push("/admin");
@@ -52,7 +51,7 @@ const SignIn = () => {
             formData,
             { headers: headers }
           );
-          console.log(res.data);
+          console.log(res);
 
           if (res.status === 200) {
             console.log("success");

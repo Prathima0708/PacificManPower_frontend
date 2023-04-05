@@ -1,8 +1,132 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Col, Container, Input, Label, Row } from "reactstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Row,
+} from "reactstrap";
+import { subURL } from "../../../utils/URLs";
+import Select from "react-select";
+import axios from "axios";
 
 const JobPostEdit = () => {
+  const [jobType, setJobType] = useState("");
+  const [skillLevel, setSkillLevel] = useState("");
+  const [skillName, setSkillName] = useState("");
+  const [streetAddress, setStreetAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [country, setCountry] = useState("");
+  const [zip, setZip] = useState("");
+  const [isCompanyNameHidden, setIsCompanyNameHidden] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [jobDescription, setJobDescription] = useState("");
+
+  const [jobTypeOptions, setJobTypeOptions] = useState([]);
+  const [skillSetOptions, setSkillSetOptions] = useState([]);
+  const [companies, setCompanies] = useState([]);
+  const [selectedCompanyId, setSelectedCompanyId] = useState(null);
+
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(null);
+
+  useEffect(() => {
+    const fetchJobTypeOptions = async () => {
+      const response = await fetch(`${subURL}/job_type/`);
+      const data = await response.json();
+
+      setJobTypeOptions(data);
+    };
+
+    fetchJobTypeOptions();
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`${subURL}/company_save_details`)
+      .then((response) => {
+        setCompanies(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    const fetchSkillSetOptions = async () => {
+      const response = await fetch(`${subURL}/skillset/`);
+      const data = await response.json();
+
+      setSkillSetOptions(data);
+    };
+
+    fetchSkillSetOptions();
+  }, []);
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      const response = await fetch("https://restcountries.com/v2/all");
+      const data = await response.json();
+      const options = data.map((country) => ({
+        label: country.name,
+        value: country.alpha2Code,
+      }));
+      setCountries(options);
+    };
+    fetchCountries();
+  }, []);
+  const handleChange = (selectedOption) => {
+    setSelectedCountry(selectedOption);
+  };
+  const handleChangeCompany = (event) => {
+    setSelectedCompanyId(event.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // async function storeData() {
+    //   const formData = {
+    //     job_type_id: jobType,
+    //     company_id: selectedCompanyId,
+    //     is_company_name_hidden: isCompanyNameHidden,
+    //     created_date:
+    //     establishment_date: establishmentDate,
+    //     company_website_url: companyWebsite,
+    //   };
+    //   console.log(formData);
+    //   try {
+    //     let headers = {
+    //       "Content-Type": "application/json; charset=utf-8",
+    //     };
+    //     const res = await axios.post(
+    //       `${subURL}/company_save_details/`,
+    //       formData,
+    //       { headers: headers }
+    //     );
+    //     console.log(res.data);
+
+    //     if (res.status === 201) {
+    //       console.log("success");
+    //       setSuccessMessage("Data saved successfully!");
+    //       setShowModal(true);
+    //       // do something to log the user in, e.g. redirect to a dashboard page
+    //     } else {
+    //       console.log("error");
+    //     }
+    //   } catch (e) {
+    //     console.log(e);
+    //   }
+    // }
+  };
   return (
     <React.Fragment>
       <section className="section">
@@ -14,212 +138,212 @@ const JobPostEdit = () => {
               </div>
             </Col>
           </Row>
-          <form action="#" className="job-post-form shadow mt-4">
+          <form
+            action="#"
+            className="job-post-form shadow mt-4"
+            onSubmit={handleSubmit}
+          >
             <div className="job-post-content box-shadow-md rounded-3 p-4">
               <Row className="row">
-                <Col lg={12}>
-                  <div className="mb-4">
-                    <Label htmlFor="jobtitle" className="form-label">
-                      Job Title
-                    </Label>
-                    <Input
-                      type="text"
-                      className="form-control"
-                      id="jobtitle"
-                      placeholder="Title"
-                    />
-                  </div>
-                </Col>
-                <Col lg={12}>
-                  <div className="mb-4">
-                    <Label htmlFor="jobdescription" className="form-label">
-                      Job Description
-                    </Label>
-                    <textarea
-                      className="form-control"
-                      id="jobdescription"
-                      rows="3"
-                      placeholder="Enter Job Description"
-                    ></textarea>
-                  </div>
-                </Col>
                 <Col lg={6}>
                   <div className="mb-4">
-                    <Label htmlFor="email" className="form-label">
-                      Email Address
-                    </Label>
+                    <Label for="jobType">Job Type</Label>
                     <Input
-                      type="email"
-                      className="form-control"
-                      id="email"
-                      placeholder="Email Address"
-                    />
-                  </div>
-                </Col>
-                <Col lg={6}>
-                  <div className="mb-4">
-                    <Label htmlFor="phoneNumber" className="form-label">
-                      Phone Number
-                    </Label>
-                    <Input
-                      type="number"
-                      className="form-control"
-                      id="phoneNumber"
-                      placeholder="Phone Number"
-                    />
-                  </div>
-                </Col>
-                <Col lg={6}>
-                  <div className="mb-4">
-                    <label
-                      htmlFor="choices-single-categories"
-                      className="form-label"
+                      type="select"
+                      name="jobType"
+                      id="jobType"
+                      value={jobType}
+                      onChange={(e) => setJobType(e.target.value)}
                     >
-                      Categories
-                    </label>
-                    <select
-                      className="form-select"
-                      data-trigger=""
-                      name="choices-single-categories"
-                      id="choices-single-categories"
-                      aria-label="Default select example"
-                    >
-                      <option value="ne">Digital & Creative</option>
-                      <option value="df">Retail</option>
-                      <option value="od">Management</option>
-                      <option value="rd">Human Resources</option>
-                    </select>
-                  </div>
-                </Col>
-                <Col lg={6}>
-                  <div className="mb-4">
-                    <label htmlFor="jobtype" className="form-label">
-                      Job Type
-                    </label>
-                    <Input
-                      type="text"
-                      className="form-control"
-                      id="jobtype"
-                      placeholder="Job type"
-                    />
-                  </div>
-                </Col>
-                <Col lg={6}>
-                  <div className="mb-4">
-                    <label htmlFor="designation" className="form-label">
-                      Designation
-                    </label>
-                    <Input
-                      type="text"
-                      className="form-control"
-                      id="designation"
-                      placeholder="Designation"
-                    />
-                  </div>
-                </Col>
-                <Col lg={6}>
-                  <div className="mb-4">
-                    <label htmlFor="salary" className="form-label">
-                      Salary($)
-                    </label>
-                    <Input
-                      type="number"
-                      className="form-control"
-                      id="salary"
-                      placeholder="Salary"
-                    />
-                  </div>
-                </Col>
-                <Col lg={6}>
-                  <div className="mb-4">
-                    <label htmlFor="qualification" className="form-label">
-                      Qualification
-                    </label>
-                    <Input
-                      type="text"
-                      className="form-control"
-                      id="qualification"
-                      placeholder="Qualification"
-                    />
-                  </div>
-                </Col>
-                <Col lg={6}>
-                  <div className="mb-4">
-                    <label htmlFor="skills" className="form-label">
-                      Job Skills{" "}
-                    </label>
-                    <Input
-                      type="text"
-                      className="form-control"
-                      id="skills"
-                      placeholder="Job skills"
-                    />
-                  </div>
-                </Col>
-                <Col lg={12}>
-                  <div className="mb-4">
-                    <label htmlFor="lastdate" className="form-label">
-                      Application Deadline Date
-                    </label>
-                    <Input type="date" className="form-control" id="lastdate" />
-                  </div>
-                </Col>
-                <Col lg={6}>
-                  <div className="mb-4">
-                    <label
-                      htmlFor="choices-single-location"
-                      className="form-label"
-                    >
-                      Country
-                    </label>
-                    <select
-                      className="form-select"
-                      data-trigger
-                      name="choices-single-location"
-                      id="choices-single-location"
-                      aria-label="Default select example"
-                    >
-                      <option value="ME">Montenegro</option>
-                      <option value="MS">Montserrat</option>
-                      <option value="MA">Morocco</option>
-                      <option value="MZ">Mozambique</option>
-                    </select>
+                      <option value="">Select Job Type</option>
+                      {jobTypeOptions.map((option) => (
+                        <option key={option.id} value={option.id}>
+                          {option.job_type.charAt(0).toUpperCase() +
+                            option.job_type.slice(1)}
+                        </option>
+                      ))}
+                    </Input>
                   </div>
                 </Col>
                 <Col lg={3}>
                   <div className="mb-4">
-                    <label htmlFor="city" className="form-label">
-                      City
-                    </label>
+                    <Label for="skillLevel">Skill Name</Label>
+                    <Input
+                      type="select"
+                      name="skillname"
+                      id="skillname"
+                      value={skillName}
+                      onChange={(e) => setSkillName(e.target.value)}
+                    >
+                      <option value="">Select Skill Name</option>
+                      {skillSetOptions.map((option) => (
+                        <option key={option.id} value={option.id}>
+                          {option.skill_set_name.charAt(0).toUpperCase() +
+                            option.skill_set_name.slice(1)}
+                        </option>
+                      ))}
+                    </Input>
+                  </div>
+                </Col>
+                <Col lg={3}>
+                  <div className="mb-4">
+                    <Label for="skillLevel">Skill Level</Label>
+                    <Input
+                      type="select"
+                      name="skillLevel"
+                      id="skillLevel"
+                      value={skillLevel}
+                      onChange={(e) => setSkillLevel(e.target.value)}
+                    >
+                      <option value="">Select Skill Level</option>
+                      <option value="Entry Level"> 1</option>
+                      <option value="Mid Level">2</option>
+                      <option value="Senior Level">3</option>
+                      <option value="Senior Level">4</option>
+                      <option value="Senior Level">5</option>
+                    </Input>
+                  </div>
+                </Col>
+
+                <Col lg={6}>
+                  <div className="mb-4">
+                    <Label for="streetAddress">Street Address</Label>
                     <Input
                       type="text"
-                      className="form-control"
+                      name="streetAddress"
+                      id="streetAddress"
+                      value={streetAddress}
+                      onChange={(e) => setStreetAddress(e.target.value)}
+                    />
+                  </div>
+                </Col>
+
+                <Col lg={6}>
+                  <div className="mb-4">
+                    <Label for="city">City</Label>
+                    <Input
+                      type="text"
+                      name="city"
                       id="city"
-                      placeholder="City"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
                     />
                   </div>
                 </Col>
-                <Col lg={3}>
+
+                <Col lg={6}>
                   <div className="mb-4">
-                    <label htmlFor="zipcode" className="form-label">
-                      Zipcode
-                    </label>
+                    <Label for="state">State</Label>
                     <Input
                       type="text"
-                      className="form-control"
-                      id="zipcode"
-                      placeholder="Zipcode"
+                      name="state"
+                      id="state"
+                      value={state}
+                      onChange={(e) => setState(e.target.value)}
                     />
                   </div>
                 </Col>
+
+                <Col lg={6}>
+                  <div className="mb-4">
+                    <Label for="country">Country</Label>
+                    {/* <Input
+                      type="text"
+                      name="country"
+                      id="country"
+                      value={country}
+                      onChange={(e) => setCountry(e.target.value)}
+                    /> */}
+                    <Select
+                      placeholder="Select Country"
+                      options={countries}
+                      value={selectedCountry}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </Col>
+                <Col lg={6}>
+                  <div className="mb-4">
+                    <Label for="zip">Zip</Label>
+                    <Input
+                      type="text"
+                      name="zip"
+                      id="zip"
+                      maxLength={7}
+                      value={zip}
+                      onChange={(e) => setZip(e.target.value)}
+                    />
+                  </div>
+                </Col>
+                <Col lg={3} style={{ marginTop: "3%" }}>
+                  <div className="mb-4">
+                    <Label check>
+                      <Input
+                        type="checkbox"
+                        checked={isCompanyNameHidden}
+                        onChange={(e) =>
+                          setIsCompanyNameHidden(e.target.checked)
+                        }
+                      />{" "}
+                      Hide Company Name
+                    </Label>
+                  </div>
+                </Col>
+                <Col lg={3} style={{ marginTop: "3%" }}>
+                  <div className="mb-4">
+                    <Label check>
+                      <Input
+                        type="checkbox"
+                        checked={isActive}
+                        onChange={(e) => setIsActive(e.target.checked)}
+                      />{" "}
+                      Active
+                    </Label>
+                  </div>
+                </Col>
+
+                <Col lg={6}>
+                  <div className="mb-4">
+                    <Label for="jobDescription">Job Description</Label>
+                    <Input
+                      type="textarea"
+                      name="jobDescription"
+                      id="jobDescription"
+                      value={jobDescription}
+                      onChange={(e) => setJobDescription(e.target.value)}
+                    />
+                  </div>
+                </Col>
+
+                <Col lg={6}>
+                  <div className="mb-4">
+                    <Label for="jobDescription">Company Name</Label>
+                    <Input
+                      type="select"
+                      name="companyname"
+                      id="companyname"
+                      // value={companies}
+                      onChange={handleChangeCompany}
+                    >
+                      <option value="">Select Company Name</option>
+                      {companies.map((option) => (
+                        <option key={option.id} value={option.id}>
+                          {option.company_name.charAt(0).toUpperCase() +
+                            option.company_name.slice(1)}
+                        </option>
+                      ))}
+                    </Input>
+                  </div>
+                </Col>
+
                 <Col lg={12}>
                   <div className="d-flex flex-wrap align-items-start gap-1 justify-content-end">
                     <Link to="/admin" className="btn btn-success">
                       Back
                     </Link>
-                    <Link to="#" className="btn btn-primary">
-                      Post Now <i className="mdi mdi-send"></i>
-                    </Link>
+                    <Button to="#" className="btn btn-purple">
+                      Submit <i className="mdi mdi-send"></i>
+                    </Button>
                   </div>
                 </Col>
               </Row>

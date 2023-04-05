@@ -27,11 +27,9 @@ const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  const [home, setHome] = useState(false);
+  const [job, setJob] = useState(false);
   const [company, setCompany] = useState(false);
-  const [aboutUs, setAboutUs] = useState(false);
-  const [pages, setPages] = useState(false);
-  const [blog, setBlog] = useState(false);
+  const [news, setNews] = useState(false);
 
   //Notification Dropdown
   const [notification, setNotification] = useState(false);
@@ -196,17 +194,17 @@ const NavBar = (props) => {
               <NavItem className="dropdown dropdown-hover">
                 <NavLink
                   to="/#"
-                  id="aboutusdropdown"
+                  id="jobdropdown"
                   role="button"
-                  onClick={() => setAboutUs(!aboutUs)}
+                  onClick={() => setJob(!job)}
                 >
                   Jobs <div className="arrow-down"></div>
                 </NavLink>
                 <ul
                   className={classname("dropdown-menu dropdown-menu-center", {
-                    show: aboutUs,
+                    show: job,
                   })}
-                  aria-labelledby="aboutusdropdown"
+                  aria-labelledby="jobdropdown"
                 >
                   <li>
                     <Link className="dropdown-item" to="/postjob">
@@ -220,6 +218,38 @@ const NavBar = (props) => {
                   </li>
                 </ul>
               </NavItem>
+              <NavItem className="dropdown dropdown-hover">
+                <NavLink
+                  to="/#"
+                  id="companydropdown"
+                  role="button"
+                  onClick={() => setCompany(!company)}
+                >
+                  Company <div className="arrow-down"></div>
+                </NavLink>
+                <ul
+                  className={classname("dropdown-menu dropdown-menu-center", {
+                    show: company,
+                  })}
+                  aria-labelledby="companydropdown"
+                >
+                  <li>
+                    <Link className="dropdown-item" to="/addcompany">
+                      Add Company details
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/myjobs">
+                      My Company
+                    </Link>
+                  </li>
+                </ul>
+              </NavItem>
+              {/* <NavItem>
+                <Link className="nav-link" to="/addcompany">
+                  Add Company
+                </Link>
+              </NavItem> */}
 
               <NavItem>
                 <Link className="nav-link" to="/candidateList">
@@ -230,17 +260,17 @@ const NavBar = (props) => {
               <NavItem className="dropdown dropdown-hover">
                 <NavLink
                   to="/#"
-                  id="aboutusdropdown"
+                  id="newsdropdown"
                   role="button"
-                  onClick={() => setAboutUs(!aboutUs)}
+                  onClick={() => setNews(!news)}
                 >
                   News <div className="arrow-down"></div>
                 </NavLink>
                 <ul
                   className={classname("dropdown-menu dropdown-menu-center", {
-                    show: aboutUs,
+                    show: news,
                   })}
-                  aria-labelledby="aboutusdropdown"
+                  aria-labelledby="newsdropdown"
                 >
                   <li>
                     <Link className="dropdown-item" to="/addnews">
